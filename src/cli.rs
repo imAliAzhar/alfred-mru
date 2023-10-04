@@ -1,3 +1,5 @@
+use std::vec;
+
 use clap::{command, Arg, ArgAction, Command};
 
 use crate::actions::action::Action;
@@ -14,6 +16,7 @@ pub fn setup_command() -> Command {
                 .about("Cache path")
                 .arg(Arg::new("path").required(true)),
         )
+        .subcommand(Command::new("list").about("List cached paths"))
 }
 
 pub fn get_args(command: Command) -> (Action, Vec<String>) {
@@ -38,6 +41,8 @@ pub fn get_args(command: Command) -> (Action, Vec<String>) {
 
             (Action::Sort, args)
         }
+
+        "list" => (Action::List, vec![]),
 
         _ => todo!(),
     }

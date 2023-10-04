@@ -1,6 +1,6 @@
 use clap::{command, Arg, ArgAction, Command};
 
-use crate::actions::Action;
+use crate::actions::action::Action;
 
 pub fn setup_command() -> Command {
     command!()

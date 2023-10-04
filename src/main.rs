@@ -1,7 +1,8 @@
 mod actions;
 mod cli;
+mod consts;
 
-use crate::actions::Action;
+use actions::action::Action;
 
 fn main() {
     let command = cli::setup_command();
